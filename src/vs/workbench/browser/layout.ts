@@ -2693,6 +2693,8 @@ class LayoutStateModel extends Disposable {
 		LayoutStateKeys.AUXILIARYBAR_SIZE.defaultValue = Math.min(300, mainContainerDimension.width / 4);
 		LayoutStateKeys.PANEL_SIZE.defaultValue = (this.stateCache.get(LayoutStateKeys.PANEL_POSITION.name) ?? isHorizontal(LayoutStateKeys.PANEL_POSITION.defaultValue)) ? mainContainerDimension.height / 3 : mainContainerDimension.width / 4;
 		LayoutStateKeys.SIDEBAR_HIDDEN.defaultValue = this.contextService.getWorkbenchState() === WorkbenchState.EMPTY;
+		// force the sidebar to be shown in empty workspaces (aka the welcome view)
+		LayoutStateKeys.SIDEBAR_HIDDEN.defaultValue = false;
 
 		// Apply all defaults
 		for (key in LayoutStateKeys) {
