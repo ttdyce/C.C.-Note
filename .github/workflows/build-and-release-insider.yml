@@ -61,7 +61,7 @@ jobs:
     - run: gh release create ${{ github.sha }} Concept-Note-darwin-${{ inputs.vscode-arch }}.zip -d -p -R ttdyce/Concept-Note-insider --title "insider-${{ github.sha }}" -n ""
       working-directory: ../
       env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GH_TOKEN: ${{ secrets.INSIDER_RELEASE_TOKEN }}
 
 #   build-and-release-macos-x64-insider:
 #     runs-on: macos-13
