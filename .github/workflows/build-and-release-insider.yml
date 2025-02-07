@@ -55,10 +55,11 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: ccnote-darwin-${{ inputs.vscode-arch }} ${{ github.sha }}
-        path: /Users/runner/work/${{ github.event.repository.name }}/Concept-Note-darwin-${{ inputs.vscode-arch }}/Concept-Note.app
+        path: /Users/runner/work/${{ github.event.repository.name }}/Concept-Note-darwin-${{ inputs.vscode-arch }}.zip
 
 
     - run: gh release create ${{ github.sha }} Concept-Note-darwin-${{ inputs.vscode-arch }}.zip -d -p -R ttdyce/Concept-Note-insider --title "insider-${{ github.sha }}" -n ""
+      working-irectory: ../
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
