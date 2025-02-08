@@ -27,6 +27,7 @@
 	"darwinBundleIdentifier": "com.ccnote",
 	"linuxIconName": "ccnote",
 	"licenseFileName": "LICENSE.txt",
+	"releaseNotesUrl": "https://github.com/ttdyce/concept-note/releases",
 	"reportIssueUrl": "https://github.com/ttdyce/concept-note/issues/new",
 	"nodejsRepository": "https://nodejs.org",
 	"urlProtocol": "ccnote",
