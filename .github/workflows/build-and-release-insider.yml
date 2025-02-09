@@ -45,7 +45,7 @@ jobs:
 
     - name: Compile & Hygiene ${{ inputs.vscode-arch }}
       run: |
-        npm run compile
+        npm run gulp compile
         npm exec -- npm-run-all -lp core-ci extensions-ci hygiene eslint valid-layers-check vscode-dts-compile-check tsec-compile-check
 
     - name: Build for darwin ${{ inputs.vscode-arch }}
