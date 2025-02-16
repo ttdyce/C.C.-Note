@@ -371,7 +371,7 @@ function packageTask(platform, arch, sourceFolderName, destinationFolderName, op
 		} else if (platform === 'darwin') {
 			const shortcut = gulp.src('resources/darwin/bin/code.sh')
 				.pipe(replace('@@APPNAME@@', product.applicationName))
-				.pipe(rename('bin/code'));
+				.pipe(rename('bin/' + product.applicationName));
 
 			all = es.merge(all, shortcut);
 		}
@@ -484,7 +484,7 @@ BUILD_TARGETS.forEach(buildTarget => {
 
 	const [vscode, vscodeMin] = ['', 'min'].map(minified => {
 		const sourceFolderName = `out-vscode${dashed(minified)}`;
-		const destinationFolderName = `VSCode${dashed(platform)}${dashed(arch)}`;
+		const destinationFolderName = `Concept-Note${dashed(platform)}${dashed(arch)}`;
 
 		const tasks = [
 			compileNativeExtensionsBuildTask,

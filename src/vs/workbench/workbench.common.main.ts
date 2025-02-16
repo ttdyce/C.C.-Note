@@ -193,10 +193,10 @@ import './contrib/chat/browser/chat.contribution.js';
 import './contrib/inlineChat/browser/inlineChat.contribution.js';
 
 // Interactive
-import './contrib/interactive/browser/interactive.contribution.js';
+// import './contrib/interactive/browser/interactive.contribution.js';
 
 // repl
-import './contrib/replNotebook/browser/repl.contribution.js';
+// import './contrib/replNotebook/browser/repl.contribution.js';
 
 // Testing
 import './contrib/testing/browser/testing.contribution.js';
@@ -227,18 +227,18 @@ import './contrib/searchEditor/browser/searchEditor.contribution.js';
 import './contrib/sash/browser/sash.contribution.js';
 
 // SCM
-import './contrib/scm/browser/scm.contribution.js';
+// import './contrib/scm/browser/scm.contribution.js';
 
 // Debug
-import './contrib/debug/browser/debug.contribution.js';
-import './contrib/debug/browser/debugEditorContribution.js';
-import './contrib/debug/browser/breakpointEditorContribution.js';
-import './contrib/debug/browser/callStackEditorContribution.js';
-import './contrib/debug/browser/repl.js';
-import './contrib/debug/browser/debugViewlet.js';
+// import './contrib/debug/browser/debug.contribution.js';
+// import './contrib/debug/browser/debugEditorContribution.js';
+// import './contrib/debug/browser/breakpointEditorContribution.js';
+// import './contrib/debug/browser/callStackEditorContribution.js';
+// import './contrib/debug/browser/repl.js';
+// import './contrib/debug/browser/debugViewlet.js';
 
 // Markers
-import './contrib/markers/browser/markers.contribution.js';
+// import './contrib/markers/browser/markers.contribution.js';
 
 // Merge Editor
 import './contrib/mergeEditor/browser/mergeEditor.contribution.js';
@@ -276,7 +276,7 @@ import './contrib/output/browser/outputView.js';
 import './contrib/terminal/terminal.all.js';
 
 // External terminal
-import './contrib/externalTerminal/browser/externalTerminal.contribution.js';
+// import './contrib/externalTerminal/browser/externalTerminal.contribution.js';
 
 // Relauncher
 import './contrib/relauncher/browser/relauncher.contribution.js';
@@ -285,8 +285,8 @@ import './contrib/relauncher/browser/relauncher.contribution.js';
 import './contrib/tasks/browser/task.contribution.js';
 
 // Remote
-import './contrib/remote/common/remote.contribution.js';
-import './contrib/remote/browser/remote.contribution.js';
+// import './contrib/remote/common/remote.contribution.js';
+// import './contrib/remote/browser/remote.contribution.js';
 
 // Emmet
 import './contrib/emmet/browser/emmet.contribution.js';
@@ -323,8 +323,8 @@ import './contrib/surveys/browser/nps.contribution.js';
 import './contrib/surveys/browser/languageSurveys.contribution.js';
 
 // Welcome
-import './contrib/welcomeGettingStarted/browser/gettingStarted.contribution.js';
-import './contrib/welcomeWalkthrough/browser/walkThrough.contribution.js';
+// import './contrib/welcomeGettingStarted/browser/gettingStarted.contribution.js';
+// import './contrib/welcomeWalkthrough/browser/walkThrough.contribution.js';
 import './contrib/welcomeViews/common/viewsWelcome.contribution.js';
 import './contrib/welcomeViews/common/newFile.contribution.js';
 
@@ -335,8 +335,8 @@ import './contrib/callHierarchy/browser/callHierarchy.contribution.js';
 import './contrib/typeHierarchy/browser/typeHierarchy.contribution.js';
 
 // Outline
-import './contrib/codeEditor/browser/outline/documentSymbolsOutline.js';
-import './contrib/outline/browser/outline.contribution.js';
+// import './contrib/codeEditor/browser/outline/documentSymbolsOutline.js';
+// import './contrib/outline/browser/outline.contribution.js';
 
 // Language Detection
 import './contrib/languageDetection/browser/languageDetection.contribution.js';
@@ -345,7 +345,7 @@ import './contrib/languageDetection/browser/languageDetection.contribution.js';
 import './contrib/languageStatus/browser/languageStatus.contribution.js';
 
 // Authentication
-import './contrib/authentication/browser/authentication.contribution.js';
+// import './contrib/authentication/browser/authentication.contribution.js';
 
 // User Data Sync
 import './contrib/userDataSync/browser/userDataSync.contribution.js';
