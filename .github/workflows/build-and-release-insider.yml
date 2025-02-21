@@ -43,10 +43,11 @@ jobs:
           echo "Npm install failed $i, trying again..."
         done
 
-    - name: Compile ${{ inputs.vscode-arch }}
-      run: |
-        npm run gulp compile
-      # npm exec -- npm-run-all -lp core-ci extensions-ci hygiene eslint valid-layers-check vscode-dts-compile-check tsec-compile-check
+    - name: Compile ${{ inputs.vscode-arch }} /build/ folder
+      run: npm run gulp compile # same with npm run compile, with memory limit
+
+    - name: Compile & Hygiene ${{ inputs.vscode-arch }} (out-*/ folders)
+      run: npm exec -- npm-run-all -lp core-ci-pr valid-layers-check vscode-dts-compile-check tsec-compile-check
 
     - name: Build for darwin ${{ inputs.vscode-arch }}
       run: npm run gulp vscode-darwin-${{ inputs.vscode-arch }}-min-ci
