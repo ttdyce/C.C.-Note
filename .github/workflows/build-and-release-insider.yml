@@ -48,7 +48,8 @@ jobs:
 
     - name: Compile & Hygiene ${{ inputs.vscode-arch }} (out-*/ folders)
       run: |
-        npm exec -- npm-run-all -lp valid-layers-check vscode-dts-compile-check tsec-compile-check
+        npm exec -- npm-run-all -lp vscode-dts-compile-check tsec-compile-check
+        node --max-old-space-size=8192 build/lib/layersChecker.js
         npm run gulp core-ci-pr
 
     - name: Build for darwin ${{ inputs.vscode-arch }}
