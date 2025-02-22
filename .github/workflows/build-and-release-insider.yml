@@ -48,10 +48,13 @@ jobs:
 
     - name: Compile & Hygiene ${{ inputs.vscode-arch }} (out-*/ folders)
       run: |
+        # vscode use azure pipeline to run this, somehow github action say not enough ram
+        # npm exec -- npm-run-all -lp core-ci-pr extensions-ci-pr hygiene eslint valid-layers-check vscode-dts-compile-check tsec-compile-check
         npm exec -- npm-run-all -lp vscode-dts-compile-check
+        node --max-old-space-size=8192 build/eslint
         node --max-old-space-size=8192 build/lib/layersChecker.js
         node --max-old-space-size=8192 node_modules/tsec/bin/tsec -p src/tsconfig.tsec.json
-        npm run gulp core-ci-pr
+        npm run gulp core-ci-pr extensions-ci-pr hygiene
 
     - name: Build for darwin ${{ inputs.vscode-arch }}
       run: npm run gulp vscode-darwin-${{ inputs.vscode-arch }}-min-ci
