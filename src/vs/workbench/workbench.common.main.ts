@@ -193,7 +193,7 @@ import './contrib/chat/browser/chat.contribution.js';
 import './contrib/inlineChat/browser/inlineChat.contribution.js';
 
 // Interactive
-// import './contrib/interactive/browser/interactive.contribution.js';
+import './contrib/interactive/browser/interactive.contribution.js';
 
 // repl
 // import './contrib/replNotebook/browser/repl.contribution.js';
@@ -230,10 +230,10 @@ import './contrib/searchEditor/browser/searchEditor.contribution.js';
 import './contrib/sash/browser/sash.contribution.js';
 
 // SCM
-// import './contrib/scm/browser/scm.contribution.js';
+import './contrib/scm/browser/scm.contribution.js';
 
 // Debug
-// import './contrib/debug/browser/debug.contribution.js';
+import './contrib/debug/browser/debug.contribution.js';
 // import './contrib/debug/browser/debugEditorContribution.js';
 // import './contrib/debug/browser/breakpointEditorContribution.js';
 // import './contrib/debug/browser/callStackEditorContribution.js';
