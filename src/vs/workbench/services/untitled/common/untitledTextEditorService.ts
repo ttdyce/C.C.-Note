@@ -186,6 +186,9 @@ export class UntitledTextEditorService extends Disposable implements IUntitledTe
 	readonly onDidChangeLabel = this._onDidChangeLabel.event;
 
 	private readonly mapResourceToModel = new ResourceMap<UntitledTextEditorModel>();
+	private readonly mapResourceToSavedUri = new ResourceMap<URI>();
+	// Tracks the date (YYYY-MM-DD) when mapResourceToSavedUri was last populated so we can reset daily
+	private lastSavedUriDate: string | undefined;
 
 	constructor(
 		@IInstantiationService private readonly instantiationService: IInstantiationService,
@@ -266,7 +269,13 @@ export class UntitledTextEditorService extends Disposable implements IUntitledTe
 		const year = currentDate.getFullYear();
 		const month = String(currentDate.getMonth() + 1).padStart(2, '0');
 		const day = String(currentDate.getDate()).padStart(2, '0');
+		const dateKey = `${year}-${month}-${day}`;
 
+		// New day rollover: clear saved URI map so counters restart for the new day
+		if (this.lastSavedUriDate && this.lastSavedUriDate !== dateKey) {
+			this.mapResourceToSavedUri.clear();
+		}
+		this.lastSavedUriDate = dateKey;
 
 		// Create a new untitled resource if none is provided
 		let untitledResource = options.untitledResource;
@@ -275,7 +284,7 @@ export class UntitledTextEditorService extends Disposable implements IUntitledTe
 			do {
 				untitledResource = URI.from({ scheme: Schemas.untitled, path: `${year}-${month}-${day}--${counter}` });
 				counter++;
-			} while (this.mapResourceToModel.has(untitledResource));
+			} while (this.mapResourceToModel.has(untitledResource) || this.mapResourceToSavedUri.has(untitledResource));
 		}
 
 		// Create new model with provided options
@@ -346,6 +355,7 @@ export class UntitledTextEditorService extends Disposable implements IUntitledTe
 	}
 
 	notifyDidSave(source: URI, target: URI): void {
+		this.mapResourceToSavedUri.set(source, target);
 		this._onDidSave.fire({ source, target });
 	}
 }
