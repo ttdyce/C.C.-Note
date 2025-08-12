@@ -145,7 +145,7 @@ const registry = Registry.as<IConfigurationRegistry>(ConfigurationExtensions.Con
 					localize('workbench.editor.untitled.labelFormat.content', "The name of the untitled file is derived from the contents of its first line unless it has an associated file path. It will fallback to the name in case the line is empty or contains no word characters."),
 					localize('workbench.editor.untitled.labelFormat.name', "The name of the untitled file is not derived from the contents of the file."),
 				],
-				'default': 'content',
+				'default': 'name', // changed from 'content' so untitled editors default to simple names
 				'description': localize('untitledLabelFormat', "Controls the format of the label for an untitled editor."),
 			},
 			'workbench.editor.empty.hint': {
